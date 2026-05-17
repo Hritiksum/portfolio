@@ -7,9 +7,9 @@
     --surface: #ffffff;
     --border: #e5e7eb;
     --text: #111827;
-    --muted: #6b7280;
-    --subtle: #9ca3af;
-    --accent: #4f46e5;
+    --muted: #64748b;
+    --subtle: #94a3b8;
+    --accent: #4338ca;
     --accent-light: #eef2ff;
     --accent-border: #c7d2fe;
     --green: #059669;
@@ -30,7 +30,7 @@ body {
     color: var(--text);
     font-family: var(--sans);
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -81,9 +81,9 @@ nav {
     border-radius: 6px;
     transition: all .18s;
 }
-.nav-links a:hover,
-.nav-links a.active { color: var(--text); background: var(--bg); opacity: 1; }
-.nav-links a.active { font-weight: 600; }
+.nav-links a:hover { color: var(--text); opacity: 1; }
+.nav-links a.active { color: var(--text); font-weight: 600; position: relative; }
+.nav-links a.active::after { content: ''; position: absolute; bottom: 2px; left: .75rem; right: .75rem; height: 2px; background: var(--accent); border-radius: 1px; }
 .nav-cta {
     font-size: .82rem;
     font-weight: 600;
@@ -170,11 +170,11 @@ footer {
 
 /* ── SECTION TITLES (within pages) ── */
 .section-label {
-    font-size: .68rem;
-    font-weight: 700;
-    letter-spacing: .12em;
+    font-size: .67rem;
+    font-weight: 600;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--subtle);
     display: block;
     margin-bottom: .6rem;
 }
@@ -306,6 +306,7 @@ footer {
     background: var(--accent-light);
     color: var(--accent);
     border-color: var(--accent-border);
+    font-weight: 600;
 }
 
 /* ── FADE IN ── */
