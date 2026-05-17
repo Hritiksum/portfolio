@@ -115,10 +115,22 @@
 
         @media(max-width:768px) {
             .exp-container { padding: 0 1.25rem; }
-            .company-header { flex-wrap: wrap; }
-            .company-duration { margin-left: 0; text-align: left; }
+            .company-header { flex-wrap: wrap; padding: 1.25rem 1.25rem 1rem; gap: .75rem; }
+            .company-duration { margin-left: 0; text-align: left; flex-basis: 100%; border-top: 1px solid var(--border); padding-top: .75rem; }
+            .company-logo { width: 38px; height: 38px; font-size: .75rem; }
             .role-top { flex-direction: column; gap: .35rem; }
+            .roles { padding: 0 1.25rem 1.25rem; }
+            .role-item { gap: 0 1rem; padding-top: 1.25rem; }
+            .role-desc { font-size: .84rem; }
             .exp-summary-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media(max-width:420px) {
+            .company-header { padding: 1rem; }
+            .roles { padding: 0 1rem 1rem; }
+            .role-tags { gap: .25rem; }
+            .role-tag { font-size: .63rem; }
+            .exp-summary-grid { grid-template-columns: 1fr; gap: 1rem; }
         }
     </style>
 </head>
