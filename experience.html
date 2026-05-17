@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience — Hritik Suman</title>
+    <meta name="description" content="Hritik Suman's work experience at Algebrik AI, InCred Financial Services, Deloitte, and Ameha Technologies.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .exp-container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+        .timeline { margin-top: 3rem; }
+
+        .company-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .company-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.75rem 1.75rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+        .company-logo {
+            width: 44px; height: 44px; border-radius: 10px;
+            background: var(--surface); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: .85rem; color: var(--accent);
+            flex-shrink: 0; box-shadow: var(--shadow);
+        }
+        .company-name { font-weight: 800; color: var(--text); font-size: 1.05rem; }
+        .company-meta { font-size: .82rem; color: var(--muted); margin-top: .2rem; display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+        .company-meta span { display: flex; align-items: center; gap: .3rem; }
+        .company-duration { margin-left: auto; text-align: right; flex-shrink: 0; }
+        .company-duration .total { font-size: .8rem; font-weight: 600; color: var(--accent); }
+        .company-duration .range { font-size: .75rem; color: var(--muted); margin-top: .2rem; }
+
+        .roles { padding: 0 1.75rem 1.75rem; }
+        .role-item {
+            display: grid;
+            grid-template-columns: 1px 1fr;
+            gap: 0 1.5rem;
+            padding-top: 1.5rem;
+        }
+        .role-line {
+            position: relative;
+            background: var(--border);
+        }
+        .role-line::before {
+            content: '';
+            position: absolute;
+            top: 6px; left: 50%;
+            transform: translateX(-50%);
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--surface);
+        }
+        .role-item.current .role-line::before {
+            background: var(--green);
+            box-shadow: 0 0 0 3px var(--green-light);
+        }
+        .role-item.intern .role-line::before {
+            background: var(--subtle);
+        }
+
+        .role-content {}
+        .role-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .6rem; }
+        .role-title { font-weight: 700; color: var(--text); font-size: .975rem; }
+        .role-type { font-size: .72rem; font-weight: 600; color: var(--muted); background: var(--bg); border: 1px solid var(--border); padding: .15rem .5rem; border-radius: 5px; }
+        .role-period { font-size: .78rem; color: var(--muted); flex-shrink: 0; }
+        .role-duration { font-size: .72rem; color: var(--subtle); }
+        .role-location { font-size: .78rem; color: var(--subtle); margin-bottom: .875rem; display: flex; align-items: center; gap: .3rem; }
+        .role-desc { font-size: .875rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+        .role-desc ul { padding-left: 1.2rem; }
+        .role-desc li { margin-bottom: .4rem; }
+        .role-desc li strong { color: var(--text); font-weight: 600; }
+        .role-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+        .role-tag {
+            font-size: .68rem; font-weight: 600;
+            padding: .18rem .55rem; border-radius: 5px;
+            background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border);
+        }
+
+        .part-time-note {
+            display: inline-flex; align-items: center; gap: .35rem;
+            font-size: .72rem; font-weight: 600;
+            color: #92400e; background: #fef3c7; border: 1px solid #fde68a;
+            padding: .18rem .6rem; border-radius: 5px;
+        }
+
+        .exp-summary {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+        .exp-summary h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
+        .exp-summary-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+        .exp-summary-item .num { font-size: 1.75rem; font-weight: 800; color: var(--accent); letter-spacing: -.03em; }
+        .exp-summary-item .lbl { font-size: .78rem; color: var(--muted); margin-top: .2rem; }
+
+        @media(max-width:768px) {
+            .exp-container { padding: 0 1.25rem; }
+            .company-header { flex-wrap: wrap; }
+            .company-duration { margin-left: 0; text-align: left; }
+            .role-top { flex-direction: column; gap: .35rem; }
+            .exp-summary-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Hritik Suman</a>
+        <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 12h14M3 18h14"/></svg>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html" class="active">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Hire me</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="page-header-inner">
+        <span class="page-label">Experience</span>
+        <h1 class="page-title">Where I've worked.</h1>
+        <p class="page-desc">5+ years building products across AI, fintech, enterprise consulting, and early-stage startups.</p>
+    </div>
+</div>
+
+<div style="background:var(--bg);padding:3.5rem 0 4rem;">
+    <div class="exp-container">
+        <div class="timeline">
+
+            <!-- Algebrik AI -->
+            <div class="company-block">
+                <div class="company-header">
+                    <div class="company-logo">AL</div>
+                    <div style="flex:1;">
+                        <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;">
+                            <div class="company-name">Algebrik AI</div>
+                            <span class="badge badge-green"><span class="dot-live"></span>Current</span>
+                        </div>
+                        <div class="company-meta">
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                                Full-time
+                            </span>
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Bengaluru, Karnataka &middot; On-site
+                            </span>
+                        </div>
+                    </div>
+                    <div class="company-duration">
+                        <div class="total">1 yr 2 mos</div>
+                        <div class="range">Apr 2025 – Present</div>
+                    </div>
+                </div>
+                <div class="roles">
+                    <div class="role-item current">
+                        <div class="role-line"></div>
+                        <div class="role-content">
+                            <div class="role-top">
+                                <div>
+                                    <div class="role-title">Senior Software Engineer</div>
+                                    <div class="role-type">Full-time</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div class="role-period">Apr 2025 – Present</div>
+                                    <div class="role-duration">1 yr 2 mos</div>
+                                </div>
+                            </div>
+                            <div class="role-location">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Bengaluru, Karnataka, India
+                            </div>
+                            <div class="role-desc">
+                                <p>Algebrik by InCred Financial Services is an AI-powered Loan Origination System (LOS) that uses automation and AI to transform the loan lifecycle, enabling faster approvals and smarter decisions.</p>
+                                <ul>
+                                    <li>Building intelligent frontend systems powering AI-driven lending workflows</li>
+                                    <li>Architecting scalable Angular modules with performance optimization and state management</li>
+                                    <li>Collaborating cross-functionally on product design and system architecture</li>
+                                </ul>
+                            </div>
+                            <div class="role-tags">
+                                <span class="role-tag">Angular</span><span class="role-tag">TypeScript</span>
+                                <span class="role-tag">AI Integration</span><span class="role-tag">System Design</span>
+                                <span class="role-tag">LOS Platform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- InCred Financial Services -->
+            <div class="company-block">
+                <div class="company-header">
+                    <div class="company-logo">IC</div>
+                    <div style="flex:1;">
+                        <div class="company-name">InCred Financial Services</div>
+                        <div class="company-meta">
+                            <span>Full-time</span>
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Bengaluru, Karnataka &middot; On-site
+                            </span>
+                        </div>
+                    </div>
+                    <div class="company-duration">
+                        <div class="total">2 yrs</div>
+                        <div class="range">May 2023 – Apr 2025</div>
+                    </div>
+                </div>
+                <div class="roles">
+                    <!-- Senior SE -->
+                    <div class="role-item">
+                        <div class="role-line"></div>
+                        <div class="role-content">
+                            <div class="role-top">
+                                <div>
+                                    <div class="role-title">Senior Software Engineer</div>
+                                    <div class="role-type">Full-time · Promoted</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div class="role-period">Mar 2025 – Apr 2025</div>
+                                    <div class="role-duration">2 mos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SE -->
+                    <div class="role-item">
+                        <div class="role-line"></div>
+                        <div class="role-content">
+                            <div class="role-top">
+                                <div>
+                                    <div class="role-title">Software Engineer</div>
+                                    <div class="role-type">Full-time</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div class="role-period">May 2023 – Mar 2025</div>
+                                    <div class="role-duration">1 yr 11 mos</div>
+                                </div>
+                            </div>
+                            <div class="role-location">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Bengaluru, Karnataka, India
+                            </div>
+                            <div class="role-desc">
+                                <ul>
+                                    <li>Spearheaded the development of a cutting-edge <strong>Config Driven UI / Stateless SaaS platform</strong> — designed a highly adaptable system that enabled seamless UI modifications without code alterations, providing a flexible and scalable solution for customizing user experiences</li>
+                                    <li>Implemented lazy-loading, Server Side Rendering (SSR), and reusable Angular component libraries significantly improving application performance</li>
+                                    <li>Built and maintained REST API integrations with Flask/Python backend services</li>
+                                    <li>Delivered a multi-tenant architecture spanning multiple business verticals</li>
+                                </ul>
+                            </div>
+                            <div class="role-tags">
+                                <span class="role-tag">Angular 7+</span><span class="role-tag">TypeScript</span>
+                                <span class="role-tag">Config Driven UI</span><span class="role-tag">Flask</span>
+                                <span class="role-tag">Python</span><span class="role-tag">MySQL</span>
+                                <span class="role-tag">SSR</span><span class="role-tag">Leadership</span>
+                                <span class="role-tag">Data Structures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deloitte -->
+            <div class="company-block">
+                <div class="company-header">
+                    <div class="company-logo" style="font-size:1.1rem;font-weight:900;color:#007b40;">D.</div>
+                    <div style="flex:1;">
+                        <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;">
+                            <div class="company-name">Deloitte</div>
+                            <span class="part-time-note">Part-time</span>
+                        </div>
+                        <div class="company-meta">
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Gurugram, Haryana &middot; Hybrid
+                            </span>
+                        </div>
+                    </div>
+                    <div class="company-duration">
+                        <div class="total">9 mos</div>
+                        <div class="range">Jul 2022 – Mar 2023</div>
+                    </div>
+                </div>
+                <div class="roles">
+                    <div class="role-item">
+                        <div class="role-line"></div>
+                        <div class="role-content">
+                            <div class="role-top">
+                                <div>
+                                    <div class="role-title">Software Development Engineer</div>
+                                    <div class="role-type">Part-time</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div class="role-period">Jul 2022 – Mar 2023</div>
+                                    <div class="role-duration">9 mos</div>
+                                </div>
+                            </div>
+                            <div class="role-location">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Gurugram, Haryana, India
+                            </div>
+                            <div class="role-desc">
+                                <ul>
+                                    <li>Developed a real-time data visualisation web application for <strong>Caterpillar Inc.</strong> — representing data as charts, heat maps, and statistical graphs for actionable business insights</li>
+                                    <li>Used <strong>Plotly.js</strong> to visualise data as interactive overlayed, stacked bar and scatter graphs, heat-maps with zoom in/out and pan functionality</li>
+                                    <li>Extended Plotly.js libraries to customise functionality based on requirements and implementing keyboard interactions</li>
+                                </ul>
+                            </div>
+                            <div class="role-tags">
+                                <span class="role-tag">Plotly.js</span><span class="role-tag">Angular</span>
+                                <span class="role-tag">Data Visualization</span><span class="role-tag">TypeScript</span>
+                                <span class="role-tag">Charts</span><span class="role-tag">Heat Maps</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ameha Technologies -->
+            <div class="company-block">
+                <div class="company-header">
+                    <div class="company-logo" style="font-size:.75rem;">AMH</div>
+                    <div style="flex:1;">
+                        <div class="company-name">Ameha Technologies</div>
+                        <div class="company-meta">
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Greater Noida
+                            </span>
+                        </div>
+                    </div>
+                    <div class="company-duration">
+                        <div class="total">2 yrs 5 mos</div>
+                        <div class="range">Feb 2021 – Jun 2023</div>
+                    </div>
+                </div>
+                <div class="roles">
+                    <!-- SDE -->
+                    <div class="role-item">
+                        <div class="role-line"></div>
+                        <div class="role-content">
+                            <div class="role-top">
+                                <div>
+                                    <div class="role-title">Software Development Engineer</div>
+                                    <div class="role-type">Full-time</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div class="role-period">Aug 2021 – Jun 2023</div>
+                                    <div class="role-duration">1 yr 11 mos</div>
+                                </div>
+                            </div>
+                            <div class="role-location">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                Remote
+                            </div>
+                            <div class="role-desc">
+                                <p>Ameha Technologies is a startup working on Application Development &amp; Maintenance, Data Analytics, and Digital Services for a range of clients.</p>
+                                <ul>
+                                    <li>Responsibility for full-stack development across multiple client projects</li>
+                                    <li>Worked with Amazon CloudWatch, WebSocket, and 15+ other technologies</li>
+                                    <li>Contributed to application monitoring, analytics dashboards, and digital service platforms</li>
+                                </ul>
+                            </div>
+                            <div class="role-tags">
+                                <span class="role-tag">Full Stack</span><span class="role-tag">Amazon CloudWatch</span>
+                                <span class="role-tag">WebSocket</span><span class="role-tag">Angular</span>
+                                <span class="role-tag">Django</span><span class="role-tag">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Intern -->
+                    <div class="role-item intern">
+                        <div class="role-line"></div>
+                        <div class="role-content">
+                            <div class="role-top">
+                                <div>
+                                    <div class="role-title">Software Engineer Intern</div>
+                                    <div class="role-type">Internship</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div class="role-period">Feb 2021 – Jul 2021</div>
+                                    <div class="role-duration">6 mos</div>
+                                </div>
+                            </div>
+                            <div class="role-location">Remote</div>
+                            <div class="role-desc">
+                                <ul>
+                                    <li>Implemented RESTful CRUD API endpoints using flaskRESTJsonApi</li>
+                                    <li>Prepping web art, fixing and maintaining front-end &amp; back-end code</li>
+                                    <li>Adding REST API endpoints and performing Database Design</li>
+                                </ul>
+                                <p style="margin-top:.6rem;font-size:.8rem;"><strong style="color:var(--text)">Tech:</strong> Angular 7, Flask, TypeScript, Python, MySQL, REST API</p>
+                            </div>
+                            <div class="role-tags">
+                                <span class="role-tag">Angular 7</span><span class="role-tag">Flask</span>
+                                <span class="role-tag">TypeScript</span><span class="role-tag">Python</span>
+                                <span class="role-tag">MySQL</span><span class="role-tag">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /timeline -->
+
+        <!-- SUMMARY -->
+        <div class="exp-summary">
+            <h3>Career at a glance</h3>
+            <div class="exp-summary-grid">
+                <div class="exp-summary-item">
+                    <div class="num">5+</div>
+                    <div class="lbl">Years of experience (since Feb 2021)</div>
+                </div>
+                <div class="exp-summary-item">
+                    <div class="num">4</div>
+                    <div class="lbl">Companies (AI, Fintech, Consulting, Startup)</div>
+                </div>
+                <div class="exp-summary-item">
+                    <div class="num">5</div>
+                    <div class="lbl">Roles held across career</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <span class="footer-copy">&copy; 2025 Hritik Suman. All rights reserved.</span>
+        <div class="footer-socials">
+            <a href="https://github.com/Hritiksum" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/hritik-suman-9a830a165/" target="_blank">LinkedIn</a>
+            <a href="https://dev.to/hritiksum" target="_blank">Dev.to</a>
+            <a href="mailto:hritiksuman@gmail.com">Email</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

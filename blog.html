@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Hritik Suman</title>
+    <meta name="description" content="Technical articles by Hritik Suman on software engineering, cloud, and system design.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+        .blog-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            transition: all .22s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-card:hover { border-color: var(--accent-border); box-shadow: var(--shadow-md); transform: translateY(-2px); opacity: 1; }
+
+        .blog-tag-row { display: flex; gap: .5rem; align-items: center; margin-bottom: .6rem; }
+        .blog-tag {
+            font-size: .67rem; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: var(--accent);
+        }
+        .blog-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border); }
+        .blog-date { font-size: .75rem; color: var(--muted); }
+
+        .blog-title { font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: .6rem; }
+        .blog-excerpt { font-size: .875rem; color: var(--muted); line-height: 1.75; }
+        .blog-arrow {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: var(--bg); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--muted); flex-shrink: 0; transition: all .18s;
+        }
+        .blog-card:hover .blog-arrow { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+        .blog-devto-badge {
+            display: inline-flex; align-items: center; gap: .35rem;
+            font-size: .72rem; font-weight: 600; color: var(--muted);
+            background: var(--bg); border: 1px solid var(--border);
+            padding: .2rem .6rem; border-radius: 5px; margin-top: .75rem;
+        }
+
+        .more-section {
+            background: var(--surface);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 1.25rem;
+        }
+        .more-section h3 { font-weight: 700; color: var(--text); margin-bottom: .5rem; }
+        .more-section p { font-size: .875rem; color: var(--muted); max-width: 420px; margin: 0 auto 1.5rem; line-height: 1.75; }
+
+        @media(max-width:640px) {
+            .blog-card { grid-template-columns: 1fr; }
+            .blog-arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Hritik Suman</a>
+        <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 12h14M3 18h14"/></svg>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Hire me</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="page-header-inner">
+        <span class="page-label">Blog</span>
+        <h1 class="page-title">Thoughts &amp; writings.</h1>
+        <p class="page-desc">Notes on software engineering, cloud infrastructure, system design, and engineering practice. Published on Dev.to.</p>
+    </div>
+</div>
+
+<div style="background:var(--bg);padding:2rem 0 4rem;">
+    <div class="container">
+        <div class="blog-list">
+
+            <!-- Article 1 -->
+            <a href="https://dev.to/hritiksum/server-performance-report-with-cloudwatch-iog-insights-11b7" target="_blank" class="blog-card">
+                <div>
+                    <div class="blog-tag-row">
+                        <span class="blog-tag">AWS</span>
+                        <div class="blog-dot"></div>
+                        <span class="blog-tag">CloudWatch</span>
+                        <div class="blog-dot"></div>
+                        <span class="blog-tag">Tooling</span>
+                        <div class="blog-dot"></div>
+                        <span class="blog-date">Aug 21, 2022</span>
+                    </div>
+                    <div class="blog-title">Server Performance Report with AWS CloudWatch Log Insights</div>
+                    <div class="blog-excerpt">
+                        How to leverage AWS CloudWatch Log Insights as an interactive log query tool to visualize and analyse backend service performance. Covers custom Java logging instrumentation, Insights query syntax for latency and error analysis, and building consolidated monitoring dashboards.
+                    </div>
+                    <div class="blog-devto-badge">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.29zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.73-.03c.41-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.67z"/></svg>
+                        Published on Dev.to
+                    </div>
+                </div>
+                <div class="blog-arrow">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- More coming -->
+        <div class="more-section">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto;display:block;color:var(--subtle)"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <h3 style="margin-top:1rem;">More articles on the way</h3>
+            <p>Working on posts about Angular architecture, Config Driven UI design patterns, frontend system design, and AWS tooling. Follow me on Dev.to to get notified.</p>
+            <a href="https://dev.to/hritiksum" target="_blank" class="btn btn-dark">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.29zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.73-.03c.41-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.67z"/></svg>
+                Follow on Dev.to
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <span class="footer-copy">&copy; 2025 Hritik Suman. All rights reserved.</span>
+        <div class="footer-socials">
+            <a href="https://github.com/Hritiksum" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/hritik-suman-9a830a165/" target="_blank">LinkedIn</a>
+            <a href="https://dev.to/hritiksum" target="_blank">Dev.to</a>
+            <a href="mailto:hritiksuman@gmail.com">Email</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
