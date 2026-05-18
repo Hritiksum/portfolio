@@ -1,161 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — Hritik Suman</title>
-    <meta name="description" content="Learn about Hritik Suman — Senior Software Engineer, his skills, education, and certifications.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Hritik Suman">
-    <meta name="keywords" content="Hritik Suman, about, Senior Software Engineer, Angular, TypeScript, machine learning, Bengaluru">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hritiksum.github.io/portfolio/about.html">
-    <meta property="og:title" content="About — Hritik Suman">
-    <meta property="og:description" content="Senior Software Engineer with 5+ years building scalable platforms across AI, fintech, and enterprise consulting.">
-    <meta property="og:site_name" content="Hritik Suman">
-    <meta property="og:image" content="https://hritiksum.github.io/portfolio/social-preview.svg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About — Hritik Suman">
-    <meta name="twitter:description" content="Senior Software Engineer with 5+ years building scalable platforms across AI, fintech, and enterprise consulting.">
-    <meta name="twitter:image" content="https://hritiksum.github.io/portfolio/social-preview.svg">
-    <meta name="theme-color" content="#4338ca">
-    <link rel="canonical" href="https://hritiksum.github.io/portfolio/about.html">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "About — Hritik Suman",
-      "url": "https://hritiksum.github.io/portfolio/about.html",
-      "description": "Senior Software Engineer with 5+ years building scalable platforms across AI, fintech, and enterprise consulting.",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Hritik Suman",
-        "jobTitle": "Senior Software Engineer",
-        "url": "https://hritiksum.github.io/portfolio/"
-      }
+---
+layout: default
+title: "About — Hritik Suman"
+page_id: about
+description: "Learn about Hritik Suman — Senior Software Engineer, his skills, education, and certifications."
+keywords: "Hritik Suman, about, Senior Software Engineer, Angular, TypeScript, machine learning, Bengaluru"
+og_description: "Senior Software Engineer with 5+ years building scalable platforms across AI, fintech, and enterprise consulting."
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About — Hritik Suman",
+  "url": "https://hritiksum.github.io/portfolio/about.html",
+  "description": "Senior Software Engineer with 5+ years building scalable platforms across AI, fintech, and enterprise consulting.",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Hritik Suman",
+    "jobTitle": "Senior Software Engineer",
+    "url": "https://hritiksum.github.io/portfolio/"
+  }
+}
+</script>
+<style>
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+    .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.1rem; font-size: .975rem; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+
+    .edu-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 1.4rem 1.6rem;
+        box-shadow: var(--shadow);
     }
-    </script>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
-        .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.1rem; font-size: .975rem; }
-        .about-text p strong { color: var(--text); font-weight: 600; }
+    .edu-card-header { display: flex; align-items: flex-start; gap: 1rem; }
+    .edu-icon {
+        width: 42px; height: 42px; border-radius: 9px;
+        background: var(--accent-light); border: 1px solid var(--accent-border);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.2rem; flex-shrink: 0;
+    }
+    .edu-name { font-weight: 700; color: var(--text); font-size: .975rem; }
+    .edu-degree { font-size: .85rem; color: var(--muted); margin-top: .2rem; }
+    .edu-period { font-size: .78rem; color: var(--subtle); margin-top: .2rem; }
 
-        .edu-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--r);
-            padding: 1.4rem 1.6rem;
-            box-shadow: var(--shadow);
-        }
-        .edu-card-header { display: flex; align-items: flex-start; gap: 1rem; }
-        .edu-icon {
-            width: 42px; height: 42px; border-radius: 9px;
-            background: var(--accent-light); border: 1px solid var(--accent-border);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; flex-shrink: 0;
-        }
-        .edu-name { font-weight: 700; color: var(--text); font-size: .975rem; }
-        .edu-degree { font-size: .85rem; color: var(--muted); margin-top: .2rem; }
-        .edu-period { font-size: .78rem; color: var(--subtle); margin-top: .2rem; }
+    .skills-section { background: var(--bg); padding: 3.5rem 0; border-top: 1px solid var(--border); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .skill-cat {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 1.35rem;
+        box-shadow: var(--shadow);
+        transition: border-color .18s;
+    }
+    .skill-cat:hover { border-color: var(--accent-border); }
+    .skill-cat-name {
+        font-size: .68rem; font-weight: 700; letter-spacing: .12em;
+        text-transform: uppercase; color: var(--accent); margin-bottom: .875rem;
+    }
 
-        .skills-section { background: var(--bg); padding: 3.5rem 0; border-top: 1px solid var(--border); }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        .skill-cat {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--r);
-            padding: 1.35rem;
-            box-shadow: var(--shadow);
-            transition: border-color .18s;
-        }
-        .skill-cat:hover { border-color: var(--accent-border); }
-        .skill-cat-name {
-            font-size: .68rem; font-weight: 700; letter-spacing: .12em;
-            text-transform: uppercase; color: var(--accent); margin-bottom: .875rem;
-        }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .cert-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 1.35rem;
+        box-shadow: var(--shadow);
+        display: flex; gap: 1rem; align-items: flex-start;
+        transition: all .18s;
+    }
+    .cert-card:hover { border-color: var(--accent-border); transform: translateY(-1px); }
+    .cert-icon {
+        width: 38px; height: 38px; border-radius: 8px;
+        background: var(--accent-light); border: 1px solid var(--accent-border);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1rem; flex-shrink: 0;
+    }
+    .cert-name { font-weight: 700; color: var(--text); font-size: .9rem; }
+    .cert-issuer { font-size: .8rem; color: var(--muted); margin: .2rem 0 .4rem; }
+    .cert-date { font-size: .73rem; color: var(--subtle); }
+    .cert-skills { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .6rem; }
+    .cert-skill {
+        font-size: .66rem; padding: .15rem .45rem; border-radius: 4px;
+        background: var(--bg); color: var(--muted); border: 1px solid var(--border);
+    }
 
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        .cert-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--r);
-            padding: 1.35rem;
-            box-shadow: var(--shadow);
-            display: flex; gap: 1rem; align-items: flex-start;
-            transition: all .18s;
-        }
-        .cert-card:hover { border-color: var(--accent-border); transform: translateY(-1px); }
-        .cert-icon {
-            width: 38px; height: 38px; border-radius: 8px;
-            background: var(--accent-light); border: 1px solid var(--accent-border);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1rem; flex-shrink: 0;
-        }
-        .cert-name { font-weight: 700; color: var(--text); font-size: .9rem; }
-        .cert-issuer { font-size: .8rem; color: var(--muted); margin: .2rem 0 .4rem; }
-        .cert-date { font-size: .73rem; color: var(--subtle); }
-        .cert-skills { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .6rem; }
-        .cert-skill {
-            font-size: .66rem; padding: .15rem .45rem; border-radius: 4px;
-            background: var(--bg); color: var(--muted); border: 1px solid var(--border);
-        }
+    .reco-section { background: var(--surface); padding: 3.5rem 0; border-top: 1px solid var(--border); }
+    .reco-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .reco-card {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 1.75rem;
+        box-shadow: var(--shadow);
+    }
+    .reco-quote {
+        font-size: .9rem; color: var(--text); line-height: 1.85;
+        position: relative; padding-top: 1.5rem;
+    }
+    .reco-quote::before {
+        content: '"';
+        font-family: Georgia, serif; font-size: 3.5rem; color: var(--accent-border);
+        position: absolute; top: -.25rem; left: -.25rem; line-height: 1;
+    }
+    .reco-author { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .reco-name { font-size: .875rem; font-weight: 700; color: var(--text); }
+    .reco-role { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
 
-        .reco-section { background: var(--surface); padding: 3.5rem 0; border-top: 1px solid var(--border); }
-        .reco-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        .reco-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: var(--r);
-            padding: 1.75rem;
-            box-shadow: var(--shadow);
-        }
-        .reco-quote {
-            font-size: .9rem; color: var(--text); line-height: 1.85;
-            position: relative; padding-top: 1.5rem;
-        }
-        .reco-quote::before {
-            content: '"';
-            font-family: Georgia, serif; font-size: 3.5rem; color: var(--accent-border);
-            position: absolute; top: -.25rem; left: -.25rem; line-height: 1;
-        }
-        .reco-author { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-        .reco-name { font-size: .875rem; font-weight: 700; color: var(--text); }
-        .reco-role { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
+    @media(max-width:768px) {
+        .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .skills-section, .cert-section, .reco-section { padding: 2.5rem 0; }
+        .reco-card { padding: 1.35rem; }
+        .cert-grid { grid-template-columns: 1fr; }
+    }
 
-        @media(max-width:768px) {
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .skills-section, .cert-section, .reco-section { padding: 2.5rem 0; }
-            .reco-card { padding: 1.35rem; }
-            .cert-grid { grid-template-columns: 1fr; }
-        }
-
-        @media(max-width:420px) {
-            .skills-grid { grid-template-columns: 1fr; }
-            .reco-quote { font-size: .85rem; }
-            .edu-card { padding: 1.1rem 1.25rem; }
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">Hritik Suman</a>
-        <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 12h14M3 18h14"/></svg>
-        </button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-        <a href="contact.html" class="nav-cta">Hire me</a>
-    </div>
-</nav>
+    @media(max-width:420px) {
+        .skills-grid { grid-template-columns: 1fr; }
+        .reco-quote { font-size: .85rem; }
+        .edu-card { padding: 1.1rem 1.25rem; }
+    }
+</style>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -217,12 +182,9 @@
         <span class="section-label">Recommendations</span>
         <h2 class="section-title">What colleagues say</h2>
         <div class="reco-grid">
-           
             <div class="reco-card">
                 <div class="reco-quote">
-                    Hritik has an exceptional helping nature with strong coding skills. He has worked long hours to meet deadlines and always with satisfactory results.
-
-His soft nature, and ability to learn sets him apart. He is an asset to the organisation.
+                    Hritik has an exceptional helping nature with strong coding skills. He has worked long hours to meet deadlines and always with satisfactory results. His soft nature, and ability to learn sets him apart. He is an asset to the organisation.
                 </div>
                 <div class="reco-author">
                     <div class="reco-name">Rajiv Dabhadkar</div>
@@ -240,10 +202,7 @@ His soft nature, and ability to learn sets him apart. He is an asset to the orga
             </div>
             <div class="reco-card">
                 <div class="reco-quote">
-                    I really enjoyed working with Hritik, he’s one of those people who makes both the work and the team environment better.
-He’s great at problem-solving and has a solid grip on Angular, but what I appreciated most was how easily he could explain complex thin<br>
-He brings a positive, light vibe to the team, which makes collaboration smooth and enjoyable.
-An amazing developer and an even better teammate.
+                    I really enjoyed working with Hritik, he's one of those people who makes both the work and the team environment better. He's great at problem-solving and has a solid grip on Angular, but what I appreciated most was how easily he could explain complex things. He brings a positive, light vibe to the team, which makes collaboration smooth and enjoyable. An amazing developer and an even better teammate.
                 </div>
                 <div class="reco-author">
                     <div class="reco-name">Krishna Vishwakarma</div>
@@ -377,17 +336,3 @@ An amazing developer and an even better teammate.
         </div>
     </div>
 </div>
-
-<footer>
-    <div class="footer-inner">
-        <span class="footer-copy">&copy; 2025 Hritik Suman. All rights reserved.</span>
-        <div class="footer-socials">
-            <a href="https://github.com/Hritiksum" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/hritik-suman/" target="_blank">LinkedIn</a>
-            <a href="https://dev.to/hritiksum" target="_blank">Dev.to</a>
-            <a href="mailto:hritik.sum@gmail.com">Email</a>
-        </div>
-    </div>
-</footer>
-</body>
-</html>

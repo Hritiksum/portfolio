@@ -1,123 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Hritik Suman</title>
-    <meta name="description" content="Get in touch with Hritik Suman for work opportunities, collaborations, or just a conversation about tech.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Hritik Suman">
-    <meta name="keywords" content="Hritik Suman, contact, hire, Senior Software Engineer, Angular developer, Bengaluru">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hritiksum.github.io/portfolio/contact.html">
-    <meta property="og:title" content="Contact — Hritik Suman">
-    <meta property="og:description" content="Open to full-time roles, freelance projects, and interesting conversations about tech. Get in touch with Hritik Suman.">
-    <meta property="og:site_name" content="Hritik Suman">
-    <meta property="og:image" content="https://hritiksum.github.io/portfolio/social-preview.svg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact — Hritik Suman">
-    <meta name="twitter:description" content="Open to full-time roles, freelance projects, and interesting conversations about tech. Get in touch with Hritik Suman.">
-    <meta name="twitter:image" content="https://hritiksum.github.io/portfolio/social-preview.svg">
-    <meta name="theme-color" content="#4338ca">
-    <link rel="canonical" href="https://hritiksum.github.io/portfolio/contact.html">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contact — Hritik Suman",
-      "url": "https://hritiksum.github.io/portfolio/contact.html",
-      "description": "Open to full-time roles, freelance projects, and interesting conversations about tech.",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Hritik Suman",
-        "email": "hritik.sum@gmail.com",
-        "url": "https://hritiksum.github.io/portfolio/"
-      }
+---
+layout: default
+title: "Contact — Hritik Suman"
+page_id: contact
+description: "Get in touch with Hritik Suman for work opportunities, collaborations, or just a conversation about tech."
+keywords: "Hritik Suman, contact, hire, Senior Software Engineer, Angular developer, Bengaluru"
+og_description: "Open to full-time roles, freelance projects, and interesting conversations about tech. Get in touch with Hritik Suman."
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact — Hritik Suman",
+  "url": "https://hritiksum.github.io/portfolio/contact.html",
+  "description": "Open to full-time roles, freelance projects, and interesting conversations about tech.",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Hritik Suman",
+    "email": "hritik.sum@gmail.com",
+    "url": "https://hritiksum.github.io/portfolio/"
+  }
+}
+</script>
+<style>
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: start;
+        max-width: 560px;
     }
-    </script>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: start;
-            max-width: 560px;
-        }
-        .contact-info h2 { font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: .5rem; }
-        .contact-info p { font-size: .9rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .contact-info h2 { font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: .5rem; }
+    .contact-info p { font-size: .9rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
 
-        .contact-links { display: flex; flex-direction: column; gap: .75rem; margin-top: 2rem; }
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.25rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: all .18s;
-            text-decoration: none;
-            color: inherit;
-        }
-        .contact-link:hover { border-color: var(--accent-border); transform: translateX(3px); opacity: 1; }
-        .contact-link-icon {
-            width: 38px; height: 38px; border-radius: 9px;
-            background: var(--accent-light); border: 1px solid var(--accent-border);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--accent); flex-shrink: 0;
-        }
-        .contact-link-label { font-size: .72rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
-        .contact-link-value { font-size: .9rem; font-weight: 600; color: var(--text); margin-top: .1rem; }
+    .contact-links { display: flex; flex-direction: column; gap: .75rem; margin-top: 2rem; }
+    .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: all .18s;
+        text-decoration: none;
+        color: inherit;
+    }
+    .contact-link:hover { border-color: var(--accent-border); transform: translateX(3px); opacity: 1; }
+    .contact-link-icon {
+        width: 38px; height: 38px; border-radius: 9px;
+        background: var(--accent-light); border: 1px solid var(--accent-border);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--accent); flex-shrink: 0;
+    }
+    .contact-link-label { font-size: .72rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-link-value { font-size: .9rem; font-weight: 600; color: var(--text); margin-top: .1rem; }
 
-        .availability-card {
-            background: var(--green-light);
-            border: 1px solid var(--green-border);
-            border-radius: 10px;
-            padding: 1.25rem;
-            display: flex; gap: 1rem; align-items: flex-start;
-            margin-bottom: 2rem;
-        }
-        .availability-card .av-icon {
-            width: 36px; height: 36px; border-radius: 8px;
-            background: rgba(5,150,105,.1); display: flex; align-items: center;
-            justify-content: center; flex-shrink: 0;
-        }
-        .availability-card h4 { font-size: .875rem; font-weight: 700; color: #065f46; margin-bottom: .2rem; }
-        .availability-card p { font-size: .8rem; color: #047857; line-height: 1.6; }
+    .availability-card {
+        background: var(--green-light);
+        border: 1px solid var(--green-border);
+        border-radius: 10px;
+        padding: 1.25rem;
+        display: flex; gap: 1rem; align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+    .availability-card .av-icon {
+        width: 36px; height: 36px; border-radius: 8px;
+        background: rgba(5,150,105,.1); display: flex; align-items: center;
+        justify-content: center; flex-shrink: 0;
+    }
+    .availability-card h4 { font-size: .875rem; font-weight: 700; color: #065f46; margin-bottom: .2rem; }
+    .availability-card p { font-size: .8rem; color: #047857; line-height: 1.6; }
 
-        @media(max-width:768px) {
-            .contact-layout { gap: 2rem; }
-            .contact-link { padding: .875rem 1rem; }
-            .availability-card { padding: 1rem; }
-        }
+    @media(max-width:768px) {
+        .contact-layout { gap: 2rem; }
+        .contact-link { padding: .875rem 1rem; }
+        .availability-card { padding: 1rem; }
+    }
 
-        @media(max-width:420px) {
-            .contact-link-icon { width: 34px; height: 34px; border-radius: 8px; }
-            .contact-link-value { font-size: .84rem; }
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">Hritik Suman</a>
-        <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 12h14M3 18h14"/></svg>
-        </button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-        <a href="contact.html" class="nav-cta" style="background:var(--accent);">Hire me</a>
-    </div>
-</nav>
+    @media(max-width:420px) {
+        .contact-link-icon { width: 34px; height: 34px; border-radius: 8px; }
+        .contact-link-value { font-size: .84rem; }
+    }
+</style>
 
 <div class="page-header">
     <div class="page-header-inner">
@@ -188,17 +153,3 @@
         </div>
     </div>
 </div>
-
-<footer>
-    <div class="footer-inner">
-        <span class="footer-copy">&copy; 2025 Hritik Suman. All rights reserved.</span>
-        <div class="footer-socials">
-            <a href="https://github.com/Hritiksum" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/hritik-suman/" target="_blank">LinkedIn</a>
-            <a href="https://dev.to/hritiksum" target="_blank">Dev.to</a>
-            <a href="mailto:hritik.sum@gmail.com">Email</a>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
