@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Font loaded via <link> in layout head for non-render-blocking delivery */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -174,7 +174,7 @@ footer {
     font-weight: 600;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--subtle);
+    color: var(--muted);
     display: block;
     margin-bottom: .6rem;
 }
@@ -198,7 +198,7 @@ footer {
 }
 .badge-green {
     background: var(--green-light);
-    color: var(--green);
+    color: #047857;
     border: 1px solid var(--green-border);
 }
 .badge-accent {
